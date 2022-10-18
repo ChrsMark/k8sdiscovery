@@ -52,5 +52,5 @@ spec:
   containers:
     - name: k8sdiscovery
       #imagePullPolicy: Never
-      image: docker.io/chrismark/k8sdiscovery:v0.0.1
+      image: docker.io/chrismark/k8sdiscovery:v0.0.2
       command: ["./k8sdiscovery"]

@@ -23,8 +23,15 @@ kind load docker-image chrismark/k8sdiscovery:v0.0.1
 And uncomment the `imagePullPolicy: Never` inside the manifest
 
 
+## Run on Kubernetes
+
+```
+kubectl apply -f k8sdiscovery-kubernetes.yml
+kubectl -n kube-system port-forward pod/k8sdiscovery 6060:6060
+```
+
 ## Profiling the program
 
-1. `go build && ./k8sdiscovery --kubeconfig /home/chrismark/.kube/config`
-2. `apt-get install graphviz gv` or `brew install graphviz` 
-3`go tool pprof -png http://localhost:6060/debug/pprof/heap > out.png`
+After having deployed everything on the cluster, run the following command to
+take the heap profile of the program:
+1`go tool pprof -png http://localhost:6060/debug/pprof/heap > out.png`

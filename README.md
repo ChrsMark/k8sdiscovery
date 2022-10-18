@@ -25,6 +25,6 @@ And uncomment the `imagePullPolicy: Never` inside the manifest
 
 ## Profiling the program
 
-1. `go build && ./clientgo --kubeconfig /home/chrismark/.kube/config`
+1. `go build && ./k8sdiscovery --kubeconfig /home/chrismark/.kube/config`
 2. `apt-get install graphviz gv` or `brew install graphviz` 
 3`go tool pprof -png http://localhost:6060/debug/pprof/heap > out.png`

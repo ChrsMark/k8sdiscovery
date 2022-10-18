@@ -35,3 +35,6 @@ kubectl -n kube-system port-forward pod/k8sdiscovery 6060:6060
 After having deployed everything on the cluster, run the following command to
 take the heap profile of the program:
 1`go tool pprof -png http://localhost:6060/debug/pprof/heap > out.png`
+
+In order to take profiles over time run:
+`bash profiler.sh` and check the profiles stored under `/profiles` directory.
